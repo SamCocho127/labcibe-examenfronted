@@ -2,6 +2,14 @@
   command = "npm run build"
   publish = "dist"
 
+# Proxy al backend en MonsterASP (misma URL pública del API).
+# Evita errores de mixed content: Netlify (HTTPS) → API (HTTP).
+[[redirects]]
+  from = "/api/*"
+  to = "http://investigation2prograiv.runasp.net/api/:splat"
+  status = 200
+  force = true
+
 # SPA routing for React Router (/reportar-estafa, /reportes, etc.)
 [[redirects]]
   from = "/*"
