@@ -44,7 +44,7 @@ const Header = () => {
 
   const goToReportWizard = () => {
     closeMenu();
-    window.location.href = REPORTS_URL;
+    navigate(REPORTS_URL);
   };
 
   return (
