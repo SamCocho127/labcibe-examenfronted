@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { FlaskConical, ArrowRight, Shield } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-cyber.jpg";
 import { REPORTS_URL } from "@/lib/config";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const scrollToAbout = () => {
     const element = document.getElementById("about");
     if (element) {
@@ -12,7 +15,7 @@ const Hero = () => {
   };
 
   const goToReportWizard = () => {
-    window.location.href = REPORTS_URL;
+    navigate(REPORTS_URL);
   };
 
   return (
